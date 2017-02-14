@@ -1,0 +1,7 @@
+*.log
+node_modules/
+dist/
+__build/
+*/.DS_store
+typings/
+typings.json

@@ -1,0 +1,22 @@
+{
+  "name": "vue-case",
+  "version": "1.0.0",
+  "description": "vue-case",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Greenmzc/vue-case.git"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "Green",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Greenmzc/vue-case/issues"
+  },
+  "homepage": "https://github.com/Greenmzc/vue-case#readme"
+}
