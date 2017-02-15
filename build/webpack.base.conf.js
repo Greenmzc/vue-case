@@ -2,6 +2,7 @@ var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
+var projectRoot = path.resolve(__dirname, '../')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -34,6 +35,13 @@ module.exports = {
   module: {
     rules: [
       {
+        enforce: 'pre',
+        test: /(\.vue$)|(\.jsx?$)/,
+        loader: 'eslint-loader',
+        include: [path.join(projectRoot, 'src')],
+        exclude: /node_modules/
+      },
+      {
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',
         enforce: "pre",
@@ -46,6 +54,24 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: vueLoaderConfig
+      },
+      {
+        test: /\.(jade|pug)$/,
+        loader: 'pug',
+        include: [
+          path.join(projectRoot, 'src')
+        ],
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(p?css|postcss)$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader'
+        ],
+        include: [path.join(projectRoot, 'src')],
+        exclude: /node_modules/
       },
       {
         test: /\.js$/,
