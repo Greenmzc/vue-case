@@ -1,7 +1,7 @@
-*.log
+.DS_Store
 node_modules/
 dist/
-__build/
-*/.DS_store
-typings/
-typings.json
+npm-debug.log
+test/unit/coverage
+test/e2e/reports
+selenium-debug.log
