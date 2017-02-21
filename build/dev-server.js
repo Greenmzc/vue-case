@@ -25,6 +25,18 @@ var proxyTable = config.dev.proxyTable
 var app = express()
 var compiler = webpack(webpackConfig)
 
+var chinaData = require('../src/views/data/china.json')
+var apiRoutes = express.Router()
+
+apiRoutes.get('/chinaData', function (req, res) {
+  res.json({
+    errno: 0,
+    data: chinaData
+  })
+})
+
+app.use('/api', apiRoutes);
+
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,
   quiet: true
