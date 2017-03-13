@@ -1,0 +1,39 @@
+// font
+// font-size
+@for $index from 12 to 40 by 2
+  .u-font--$index
+    font-size: $(index)px
+
+.u-font-normal
+  font-style: normal
+
+// text
+// text-ellipsis
+.u-text-ellipsis
+  max-width: 100%
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+
+.u-text-left
+  text-align: left
+.u-text-center
+  text-align: center
+.u-text-right
+  text-align: right
+
+.u-text-indent
+  text-indent: 2em
+
+.u-text-break
+  word-wrap: break-word
+  white-space: pre-wrap
+
+// 文本多行省略, 必须webkit内核浏览器
+@for $index from 1 to 3 by 1
+  .u-lineClamp--$index
+    overflow: hidden
+    text-overflow: ellipsis
+    display: -webkit-box
+    -webkit-line-clamp: $index
+    -webkit-box-orient: vertical
